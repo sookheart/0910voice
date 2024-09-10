@@ -119,10 +119,13 @@ def main():
             else:
                 # 녹음된 오디오를 처리
                 st.audio(audio.export().read())
-                question = STT(audio)
-                now = datetime.now().strftime("%H:%M")
-                st.session_state["chat"] = st.session_state["chat"] + [("user", now, question)]
-                st.session_state["messages"] = st.session_state["messages"] + [{"role": "user", "content": question}]
+                try:
+                    question = STT(audio)  # STT 함수 호출
+                    now = datetime.now().strftime("%H:%M")
+                    st.session_state["chat"] = st.session_state["chat"] + [("user", now, question)]
+                    st.session_state["messages"] = st.session_state["messages"] + [{"role": "user", "content": question}]
+                except Exception as e:
+                    st.error(f"STT 변환 중 오류가 발생했습니다: {e}")
 
     with col2:
         # 오른쪽 영역 작성
