@@ -1,4 +1,5 @@
 openai
 gTTS
 streamlit-audiorecorder
-ffmpeg
+imageio[ffmpeg]
+
