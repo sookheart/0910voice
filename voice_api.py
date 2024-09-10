@@ -6,7 +6,6 @@ from datetime import datetime
 from gtts import gTTS
 import base64
 import imageio
-imageio.plugins.ffmpeg.download()
 
 
 # OpenAI 클라이언트 초기화
