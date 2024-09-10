@@ -87,8 +87,8 @@ def main():
 
         if api_key:
             # OpenAI 클라이언트 설정
-            OpenAI.api_key = api_key
-            client = OpenAI()  # 클라이언트 생성
+            os.environ["OPENAI_API_KEY"] = api_key  # 환경 변수에 API 키 저장
+            client = OpenAI(api_key=api_key)  # 클라이언트 생성
 
         st.markdown("---")
 
