@@ -5,8 +5,6 @@ import os
 from datetime import datetime
 from gtts import gTTS
 import base64
-import imageio
-
 
 # OpenAI 클라이언트 초기화
 client = None
